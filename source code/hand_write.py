@@ -55,8 +55,8 @@ def function(txt_path,font_path,prefix):
         replace(";"," ").replace("• ","").replace("➢"," ").replace("◼","")
     template = Template(
         background=Image.new(mode="1", size=(9060, 12793), color=1),
-        font_size=280,
-        font=ImageFont.truetype(font_path),
+        #font_size=280,
+        font=ImageFont.truetype(font_path,size=280),
         line_spacing=385,
         fill=0,  # 字体“颜色”
         left_margin=0,
@@ -103,7 +103,7 @@ while True:
         if break_flag_1 == 1:
             break
         else:
-            print("请输入需要手写的txt文件名 e.g. words.txt")
+            print("请输入需要手写的txt文件名 e.g. 0.txt")
             given_words_1 = input("")
             if not os.path.exists(path + "txts/" + given_words_1):
                 print("该文件不存在，请输入存在的文件")
